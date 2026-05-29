@@ -12,7 +12,8 @@ public class ListaSimples {
     }
 
     //aqui começa a porra toda
-    public void adicionaPedido(Pedido novoPedido){
+    //Adicionar pedidos a lista - Fila
+    public void adicionaNoPedido(Pedido novoPedido){
         No novoNo = new No(novoPedido);
 
         if ((isVazia())) {
@@ -26,6 +27,20 @@ public class ListaSimples {
             atual.setProximo(novoNo);
         }
         System.out.println("Pedido "+novoPedido.getId()+ " adicionado a lista");
+    }
+
+    //Listar pedidos existentes na lista
+    public void listar(){
+        if(isVazia()){
+            System.err.println("Nenhum pedido ainda foi registado");
+        }else{
+            No atual = inicio;
+            while (atual != null) {
+                Pedido pedido = atual.getInfo();
+                System.err.println("### "+pedido.getId()+" - "+pedido.getNomeCliente()+": "+pedido.getDescricao());
+                atual = atual.getProximo();
+            }
+        }
     }
 
 }

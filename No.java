@@ -23,6 +23,4 @@ public class No {
     public void setProximo(No proximo) {
         this.proximo = proximo;
     }
-
-    
 }
