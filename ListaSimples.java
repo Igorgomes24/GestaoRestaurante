@@ -14,17 +14,17 @@ public class ListaSimples {
     //aqui começa a porra toda
     //Adicionar pedidos a lista - Fila
     public void adicionaNoPedido(Pedido novoPedido){
-        No novoNo = new No(novoPedido);
+        No novo = new No(novoPedido);
 
         if ((isVazia())) {
-            inicio = novoNo; //validar se está vazia e colocar o No no inicio
+            inicio = novo; //validar se está vazia e colocar o No no inicio
         }else{
             No atual = inicio;
             //vai ate o ultimo No, e para onde o proximo é nulo
             while (atual.getProximo() != null) {
                 atual = atual.getProximo();
             }
-            atual.setProximo(novoNo);
+            atual.setProximo(novo);
         }
         System.out.println("Pedido "+novoPedido.getId()+ " adicionado a lista");
     }
