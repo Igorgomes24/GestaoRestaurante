@@ -12,8 +12,8 @@ public class ListaSimples {
     }
 
     //aqui começa a porra toda
-    //Adicionar pedidos a lista - Fila
-    public void adicionaNoPedido(Pedido novoPedido){
+    //Adicionar pedidos a lista (Comportamento Fila)
+    public void inserirFinal(Pedido novoPedido){
         No novo = new No(novoPedido);
 
         if ((isVazia())) {
@@ -37,7 +37,7 @@ public class ListaSimples {
             No atual = inicio;
             while (atual != null) {
                 Pedido pedido = atual.getInfo();
-                System.err.println("### "+pedido.getId()+" - "+pedido.getNomeCliente()+": "+pedido.getDescricao());
+                System.err.println("---> "+pedido.getId()+" - "+pedido.getNomeCliente()+": "+pedido.getDescricao());
                 atual = atual.getProximo();
             }
         }
