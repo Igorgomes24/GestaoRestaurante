@@ -12,7 +12,7 @@ public class ListaSimples {
     }
 
     //aqui começa a porra toda
-    //Adicionar pedidos a lista (Comportamento Fila)
+    //Adicionar pedidos a lista (Comportamento FILA)
     public void inserirFinal(Pedido novoPedido){
         No novo = new No(novoPedido);
 
@@ -32,12 +32,12 @@ public class ListaSimples {
     //Listar pedidos existentes na lista
     public void listar(){
         if(isVazia()){
-            System.err.println("Nenhum pedido ainda foi registado");
+            System.out.println("Nenhum pedido ainda foi registado");
         }else{
             No atual = inicio;
             while (atual != null) {
                 Pedido pedido = atual.getInfo();
-                System.err.println("---> "+pedido.getId()+" - "+pedido.getNomeCliente()+": "+pedido.getDescricao());
+                System.out.println("---> "+pedido.getId()+" - "+pedido.getNomeCliente()+": "+pedido.getDescricao());
                 atual = atual.getProximo();
             }
         }
